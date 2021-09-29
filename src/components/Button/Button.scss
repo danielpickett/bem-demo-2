@@ -1,0 +1,26 @@
+@import 'src/tokens';
+
+.Button {
+  font-size: $text-size-m;
+  border: $border-width-default solid $color-primary;
+  background-color: $color-primary;
+  color: $text-on-primary;
+  padding: 0.5rem 0.5rem;
+  border-radius: $border-radius-m;
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    height: $text-size-m;
+    width: $text-size-m;
+  }
+
+  &__label {
+    margin: 0 0.5rem;
+  }
+
+  &--disabled {
+    border: $border-width-default solid $color-primary-200;
+    background-color: $color-primary-200;
+  }
+}
