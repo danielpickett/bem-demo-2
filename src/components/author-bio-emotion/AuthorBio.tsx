@@ -3,17 +3,27 @@ import styled from '@emotion/styled'
 
 const Container = styled.figure<{ isVertical?: boolean }>`
   display: flex;
-  display-direction: ${(props) => (props.isVertical ? 'column' : 'row')};
   background-color: var(--color-grey-050);
   border-radius: var(--border-radius-l);
   overflow: hidden;
+  ${(props) => props.isVertical && `flex-direction: column;`}
 `
 
 const Image = styled.img<{ isVertical?: boolean }>`
   max-width: 12rem;
   height: auto;
   object-fit: cover;
-  border-radius: ${(props) => (props.isVertical ? '100rem' : '0')};
+  border-radius: 0;
+
+  ${(props) =>
+    props.isVertical &&
+    ` border-radius: 100rem;
+      height: 8rem;
+      width: 8rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2rem;
+    `}
 `
 
 const Body = styled.div<{ isVertical?: boolean }>`

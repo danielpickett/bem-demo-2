@@ -1,12 +1,26 @@
 import React from 'react'
 import styles from './AuthorBio.module.scss'
+import classNames from 'classnames'
 
 const AuthorBio = ({ isVertical }: { isVertical?: boolean }) => {
   return (
-    // <figure className={`AuthorBio${isVertical ? ' AuthorBio--vertical' : ''}`}>
-    <figure className={styles.container}>
-      <img className={styles.image} src="/sarah-dayan.jpg" alt="" />
-      <div className={styles.body}>
+    <figure
+      className={classNames(styles.container, {
+        [styles['container--is-vertical']]: isVertical,
+      })}
+    >
+      <img
+        className={classNames(styles.image, {
+          [styles['image--is-vertical']]: isVertical,
+        })}
+        src="/sarah-dayan.jpg"
+        alt=""
+      />
+      <div
+        className={classNames(styles.body, {
+          [styles['body--is-vertical']]: isVertical,
+        })}
+      >
         <blockquote className={styles.quote}>
           <p>
             “Tailwind CSS is the only framework that I've seen scale on large
