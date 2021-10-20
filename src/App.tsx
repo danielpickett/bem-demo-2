@@ -3,17 +3,30 @@ import './App.scss'
 import './theme.css'
 import AuthorBioTailwind from './components/author-bio-tailwind'
 import AuthorBioBEM from './components/author-bio-bem'
+import AuthorBioEmotion from './components/author-bio-emotion'
+import AuthorBioCSSModules from './components/author-bio-css-modules'
+import { useResizeDetector } from 'react-resize-detector'
 import Button from './components/Button'
 
 function App() {
+  const { width, ref } = useResizeDetector()
+
   return (
     <div className="App">
       <aside className="App__sidebar" style={{ width: '2rem' }}></aside>
-      <main className="App__main">
+      <main className="App__main" ref={ref}>
         <AuthorBioTailwind />
         <Spacer />
-        <AuthorBioBEM />
+
+        <AuthorBioBEM isVertical={typeof width === 'number' && width < 500} />
         <Spacer />
+
+        <AuthorBioCSSModules isVertical={!!width && width < 500} />
+        <Spacer />
+
+        <AuthorBioEmotion isVertical={!!width && width < 500} />
+        <Spacer />
+
         <Button icon={<DownArrow />}>Download</Button>
       </main>
     </div>
@@ -38,12 +51,6 @@ const DownArrow = () => (
     />
   </svg>
 )
-
-// import { useResizeDetector } from 'react-resize-detector'
-// const { width, ref } = useResizeDetector()
-// <div ref={ref} className="App__author-bio">
-//   <AuthorBioBEM isVertical={typeof width === 'number' && width < 500} />
-// </div>
 
 // function App {
 //   return (

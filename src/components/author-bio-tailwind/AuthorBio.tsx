@@ -20,7 +20,7 @@ const AuthorBio = () => {
         </blockquote>
         <figcaption className="font-medium">
           <div className="text-cyan-600">Sarah Dayan</div>
-          <div className="text-gray-500">Staff Engineer, Algolia</div>
+          <div className="text-gray-500">Staff Engineer (Tailwind)</div>
         </figcaption>
       </div>
     </figure>

@@ -6,7 +6,7 @@
   border-radius: $border-radius-l;
   overflow: hidden;
 
-  &__profile-image {
+  &__image {
     max-width: 12rem;
     height: auto;
     object-fit: cover;
@@ -29,7 +29,7 @@
     color: $text-on-grey-050;
   }
 
-  &__title-location {
+  &__job {
     color: $text-on-grey-050--subdued;
     font-size: $text-size-s;
   }
@@ -38,7 +38,7 @@
     flex-direction: column;
 
     .AuthorBio {
-      &__profile-image {
+      &__image {
         border-radius: 100rem;
         height: 8rem;
         width: 8rem;
